@@ -83,21 +83,28 @@ When you use a standard library function, open its source — it is the canonica
 
 ## Repository layout
 
+Every folder is created up front with a `.gitkeep`, so week one starts with somewhere to put
+things rather than with a decision about where things go.
+
 ```
 golang-practice/
-├── README.md              # this plan
-├── tour/                  # week 1 scratch: every Tour snippet, typed by hand
-├── mechanics/             # week 1 proof-tests: slices, defer, zero values, nil traps
-├── treesum/               # weeks 1–4 · filesystem snapshot & diff tool
-├── concurrency/           # week 3 · rate limiter, singleflight, parallel map, worker pool
+├── README.md              # this plan, and your progress tracker
+├── tour/                  # week 1 · every Tour snippet, typed by hand
+├── mechanics/             # week 1 · proof-tests: slices, defer, zero values, nil traps
+├── treesum/               # weeks 1-4 · filesystem snapshot & diff tool
 ├── exercism/              # week 2 · solutions plus notes on community idiom
-└── linkr/                 # week 5 · production JSON API
+├── concurrency/           # week 3 · rate limiter, singleflight, parallel map, worker pool
+├── linkr/                 # week 5 · production JSON API
+├── kvd/                   # weeks 6-7 · replicated key-value store
+└── notes/                 # weeks 2 & 8 · design docs, codebase walkthrough, interview answers
 ```
 
-`kvd` (weeks 6–7) should get **its own repository**. It is the interview centrepiece, and a
-capstone buried three directories deep inside a repo called `golang-practice` reads as an
-exercise rather than as a system. Everything before it belongs here, where the commit history
-telling a visible eight-week story is the point.
+Weeks 1-5 belong here, where a dense and visible eight-week commit history is itself the point.
+
+**Consider splitting `kvd` into its own repository** when you start week six. It is the
+interview centrepiece, and a capstone buried inside a repo called `golang-practice` reads as an
+exercise rather than as a system. The folder is here so the decision is not blocking — delete it
+if you split it out.
 
 ---
 
