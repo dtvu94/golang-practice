@@ -1,0 +1,34 @@
+{
+  // Default for this repository: indent with spaces, 2 per level.
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  // Without this, VS Code guesses indentation from file contents and
+  // silently overrides the two settings above.
+  "editor.detectIndentation": false,
+
+  // Go is the exception, and not by preference: gofmt indents with tabs
+  // and will rewrite spaces back to tabs on every format. Fighting it
+  // only produces churn, so .go files keep tabs.
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+  "[go.mod]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+  "[go.sum]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+  "[go.work]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+
+  // Make recipe lines must begin with a literal tab or make refuses to run.
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Default build task — bound to Ctrl+Shift+B.
+      "label": "go: run current file's package",
+      "type": "shell",
+      "command": "go run .",
+      "options": { "cwd": "${fileDirname}" },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": ["$go"]
+    },
+    {
+      "label": "go: run this file only",
+      "type": "shell",
+      "command": "go run ${fileBasename}",
+      "options": { "cwd": "${fileDirname}" },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": ["$go"]
+    },
+    {
+      "label": "go: test current package (race)",
+      "type": "shell",
+      "command": "go test -race -v .",
+      "options": { "cwd": "${fileDirname}" },
+      "group": { "kind": "test", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": ["$go"]
+    },
+    {
+      // Serves the real Tour of Go offline at http://localhost:3999
+      // `go run pkg@latest` needs no install and no PATH change.
+      "label": "tour: serve offline on :3999",
+      "type": "shell",
+      "command": "go run golang.org/x/website/tour@latest",
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    }
+  ]
+}
